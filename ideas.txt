@@ -1,0 +1,17 @@
+La vela
+	* Girar al rededor -> Yin
+	* Golpe -	> Yin
+	* Toro -> Christian
+		* Hace que el led IR aumente su IR y baje la vela/bandera para hacer pensar al contrincante que el enemigo ahí esta (una falsa alarma), y además hacerse a un lado para que se salga a el mismo
+ 
+Mapa -> Ariel
+	* Detecta donde están cada uno y si ya se va a salir del mapa
+
+Búsqueda ->  Christian
+Empujar de lado lateral -> Christian
+
+Modo Defensa -> Yin
+	* Hacerse a un lado y usar el toro si esta perdiendo
+	
+Modo de Aprendizaje -> Ariel 
+	* Guarda información del oponente en la memoria flash en el momento mas adecuado para tomar la mejor decisión.
