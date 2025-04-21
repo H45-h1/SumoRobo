@@ -1,7 +1,9 @@
-int MotorAP_1=2;
-int MotorAN_1=3;
-int MotorAP_2=4;
-int MotorAN_2=5;
+//* Todo esta bien, ignora los problemas que aparecen
+
+uint8_t MotorAP_1=2;
+uint8_t MotorAN_1=3;
+uint8_t MotorAP_2=4;
+uint8_t MotorAN_2=5;
 
 void setup(){
   // put your setup code here, to run once:
