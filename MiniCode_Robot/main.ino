@@ -1,94 +1,79 @@
 //? AP = Positivo || AN = Negativo
 //? AD = ADelante || AT = ATras
 
-#define MotorAP_1 2 //MotorAP Izquierdo
-#define MotorAN_1 3
-#define MotorAP_2 4 //MotorAP Derecho
-#define MotorAN_2 5
+#define MotorI_P 2 //MotorAP Izquierdo
+#define MotorI_N 3
+#define MotorD_P 4 //MotorAP Derecho
+#define MotorD_N 5
+
+bool Norte= true;
 
 void setup(){
   // put your setup code here, to run once:
-  pinMode(MotorAP_1, OUTPUT); // Motor A hacia adelante
-  pinMode(MotorAN_1, OUTPUT); // Motor A hacia atrás
-  pinMode(MotorAP_2, OUTPUT); // Motor B hacia adelante
-  pinMode(MotorAN_2, OUTPUT); // Motor B hacia atrás
+  pinMode(MotorI_P, OUTPUT); // Motor A hacia adelante
+  pinMode(MotorI_N, OUTPUT); // Motor A hacia atrás
+  pinMode(MotorD_P, OUTPUT); // Motor B hacia adelante
+  pinMode(MotorD_N, OUTPUT); // Motor B hacia atrás
 
-  digitalWrite(MotorAP_1,LOW);
-  digitalWrite(MotorAN_1,LOW);
-  digitalWrite(MotorAP_2,LOW);
-  digitalWrite(MotorAN_2,LOW),
+  digitalWrite(MotorI_P,LOW);
+  digitalWrite(MotorI_N,LOW);
+  digitalWrite(MotorD_P,LOW);
+  digitalWrite(MotorD_N,LOW),
 
   Serial.begin(9600);
 }
 
 void adelante(){
-  // Avanza el robot
-  digitalWrite(MotorAP_1, HIGH); // Motor A hacia adelante
-  digitalWrite(MotorAN_1, LOW);  // Motor A hacia atrás
-  digitalWrite(MotorAP_2, HIGH); // Motor B hacia adelante
-  digitalWrite(MotorAN_2, LOW);  // Motor B hacia atrás
+  digitalWrite(MotorI_P,HIGH);
+  digitalWrite(MotorI_N,LOW);
+  digitalWrite(MotorD_P,HIGH);
+  digitalWrite(MotorD_N,LOW);
+  Norte=true;
 }
 
 void atras(){
-  // Retrocede el robot
-  digitalWrite(MotorAP_1, LOW);  // Motor A hacia adelante
-  digitalWrite(MotorAN_1, HIGH); // Motor A hacia atrás
-  digitalWrite(MotorAP_2, LOW);  // Motor B hacia adelante
-  digitalWrite(MotorAN_2, HIGH); // Motor B hacia atrás
+  digitalWrite(MotorI_P,LOW);
+  digitalWrite(MotorI_N,HIGH);
+  digitalWrite(MotorD_P,LOW);
+  digitalWrite(MotorD_N,HIGH);
+  Norte=false;
 }
 
-void derechaAD(){
-  digitalWrite(MotorAP_1, HIGH);  // Motor A hacia adelante
-  digitalWrite(MotorAN_1, LOW); // Motor A hacia atrás
-  digitalWrite(MotorAP_2, LOW);  // Motor B hacia adelante
-  digitalWrite(MotorAN_2, LOW); // Motor B hacia atrás
+void izquierda(int time){
+  if(Norte==true)
+    digitalWrite(MotorI_P,LOW);
+  else
+    digitalWrite(MotorI_N,LOW);
+  delay(time);
 }
 
-void izquierdaAD(){
-  digitalWrite(MotorAP_1, LOW);  // Motor A hacia adelante
-  digitalWrite(MotorAN_1, LOW); // Motor A hacia atrás
-  digitalWrite(MotorAP_2, HIGH);  // Motor B hacia adelante
-  digitalWrite(MotorAN_2, LOW); // Motor B hacia atrás
-}
-
-void derechaAT(){
-  digitalWrite(MotorAP_1, LOW);  // Motor A hacia adelante
-  digitalWrite(MotorAN_1, HIGH); // Motor A hacia atrás
-  digitalWrite(MotorAP_2, LOW);  // Motor B hacia adelante
-  digitalWrite(MotorAN_2, LOW); // Motor B hacia atrás
-}
-
-void izquierdaAT(){
-  digitalWrite(MotorAP_1, LOW);  // Motor A hacia adelante
-  digitalWrite(MotorAN_1, LOW); // Motor A hacia atrás
-  digitalWrite(MotorAP_2, LOW);  // Motor B hacia adelante
-  digitalWrite(MotorAN_2, HIGH); // Motor B hacia atrás
-}
-
-void toro(){
-  //place holder 
+void derecha(int time){
+  if(Norte==true)
+    digitalWrite(MotorD_P,LOW);
+  else
+    digitalWrite(MotorD_N,LOW);
+  delay(time);
 }
 
 void girar(){
-  derechaAD();
-  delay(500);
+  derecha(500);
 }
 
 void test(){
   adelante();
-  delay(100);
+  delay(500);
   atras();
-  delay(100);
-  izquierdaAT();
-  delay(100);
-  derechaAD();
-  delay(100);
-  derechaAT();
-  delay(100);
-  izquierdaAD();
-  delay(100);
+  delay(500);
+  adelante();
+  derecha(250);
+  izquierda(250);
+  atras();
+  izquierda(250);
+  derecha(250);
+
 }
 
-void loop(){
+void loop() {
+  // put your main code here, to run repeatedly:
   test();
 }
