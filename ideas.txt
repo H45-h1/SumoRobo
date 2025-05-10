@@ -1,9 +1,12 @@
 La vela
 	* Girar al rededor -> Yin
 	* Golpe -	> Yin
-	* Toro -> Christian
-		* Hace que el led IR aumente su IR y baje la vela/bandera para hacer pensar al contrincante que el enemigo ahí esta (una falsa alarma), y además hacerse a un lado para que se salga a el mismo
- 
+	* Toro -> Christian {
+		* Hace que el led IR aumente su IR y baje la vela/bandera para hacer pensar al contrincante que el enemigo ahí esta (una falsa alarma), y además hacerse a un lado para que se 		salga a el mismo
+		Aumento de Infrarrojo -> ??
+			* En este mandaremos una señal infrarroja falsa para que el robot del enemigo piense que estamos ahí cunado no.
+	}
+
 Mapa -> Ariel
 	* Detecta donde están cada uno y si ya se va a salir del mapa
 
@@ -15,3 +18,6 @@ Modo Defensa -> Yin
 	
 Modo de Aprendizaje -> Ariel 
 	* Guarda información del oponente en la memoria flash en el momento mas adecuado para tomar la mejor decisión.
+
+Temporizador
+
