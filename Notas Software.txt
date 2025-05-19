@@ -1,0 +1,12 @@
+NO HACER
+
+Evitar hacer divisiones
+Evita hacer raizes cuadradas
+Evita usar números flotantes
+Usar números long
+
+HACER
+
+Utilizar tipos de datos unit8_t en vez de int.
+	* unit8_t de -128 -> 127, 0 -> 255
+
